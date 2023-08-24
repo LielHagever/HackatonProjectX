@@ -1,23 +1,12 @@
-import json
+from login import login
+from register import register
+import helpers
 
 
 def test():
-    users = [
-        {
-            "username": "Ayman_Ewida",
-            "email": "ayman@gmail.com",
-            "password": "Ayman123456@#"
-        }
-    ]
-
-    with open('./user_test.json', 'w') as users_test:
-        users.append({
-            "username": "Ayman_Eww",
-            "email": "ayman10A@gmail.com",
-            "password": "Ayman123456@#"
-        })
-
-        users_test.write(json.dumps(users))
+    # register("Ayman|Ayman123456|18|Sajur Alatar55|0509876563|ayman@gmail.com|boy")
+    print(login("Ayman|Ayman123456"))
+    print(helpers.get_user_by_id(1))
 
 
 test()

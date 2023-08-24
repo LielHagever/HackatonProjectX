@@ -8,7 +8,10 @@ def login(username_password_str):
     find_user_result, result_message = helpers.find_user(username, password)
 
     if find_user_result:
-        return result_message
+        result_user = result_message.copy()
+        result_user.pop('password')
+
+        return result_user
 
     else:
         print(result_message)
