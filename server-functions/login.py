@@ -14,4 +14,4 @@ def login(username_password_str):
         return result_user
 
     else:
-        print(result_message)
+        return result_message
