@@ -2,14 +2,14 @@ import json
 import hashlib
 
 
-def get_all_users(path='user_test.json'):
+def get_all_users(path='users.json'):
     with open(path, 'r') as users:
         all_users = json.loads(users.read())
 
     return all_users
 
 
-def get_user_id_counter(path='user_controller_test.json'):
+def get_user_id_counter(path='user_controller.json'):
     with open(path, 'r') as user_controller:
         id_counter = json.loads(user_controller.read())['id_counter']
 
@@ -34,8 +34,8 @@ def check_username_and_email(username, email):
     return True
 
 
-def add_new_user_to_db(user_object, user_path='user_test.json',
-                       user_controller_path='user_controller_test.json'):
+def add_new_user_to_db(user_object, user_path='users.json',
+                       user_controller_path='user_controller.json'):
     users = get_all_users()
 
     if check_username_and_email(user_object['username'], user_object['email']):
