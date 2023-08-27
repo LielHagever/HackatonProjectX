@@ -49,6 +49,9 @@ def at_register():  # in case of register
     while '@' not in email or '.' not in email:
         print("enter valid email")
         email = input("please enter e-mail")
+    while email[:email.find('@')] == "" or email[email.find('@')+1:email.find('.')] == "" or email[email.find('.')+1:] == "":
+        print("enter valid email")
+        email = input("please enter e-mail")
 
     gender = input("please enter your gender")
 
@@ -80,3 +83,5 @@ def main_ui():  # main
 
 
 
+
+print(main_ui())
