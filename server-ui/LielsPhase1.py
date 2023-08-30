@@ -80,8 +80,3 @@ def main_ui():  # main
     elif result == 3:
         print("have a good day!")
         exit()
-
-
-
-
-print(main_ui())
