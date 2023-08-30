@@ -1,5 +1,6 @@
 def get_info():  # getting the information
-    print("Welcome to DineWithMe")
+    print("Welcome to DineWithMe!")
+    print("------------------------")
     print("Choose an action to perform")
     print("-For Login enter 1")
     print("-For Register enter 2")
@@ -11,6 +12,8 @@ def get_info():  # getting the information
         return user_choice
 
 
+# -------------------------------------------------
+
 def at_login():  # in case of login
     username = input("please enter your username:")
     password = input("please enter your password:")
@@ -18,6 +21,7 @@ def at_login():  # in case of login
     return login_result
 
 
+# ------------------------------------------------------
 def at_register():  # in case of register
     username = input("please create username:")
     password = input("please create password:")
@@ -49,19 +53,20 @@ def at_register():  # in case of register
     while '@' not in email or '.' not in email:
         print("enter valid email")
         email = input("please enter e-mail")
-    while email[:email.find('@')] == "" or email[email.find('@')+1:email.find('.')] == "" or email[email.find('.')+1:] == "":
+    while email[:email.find('@')] == "" or email[email.find('@') + 1:email.find('.')] == "" or email[email.find(
+            '.') + 1:] == "":
         print("enter valid email")
         email = input("please enter e-mail")
 
     gender = input("please enter your gender")
 
-    register_result = (username + "|" + password + "|" + age + "|" + adress + "|"
-                       + telephone + "|" + email + "|" + gender)
+    register_result = username + "|" + password + "|" + age + "|" + adress + "|" + telephone + "|" + email + "|" + gender
 
     return register_result
 
 
-def main_ui():  # main
+# --------------------------------------------------------------------------------------------------------------------------
+def main_ui():  # main - connects al the functions
     result = get_info()
     while result == -1:
         print("Error-number cannot be larger than 3 or smaller than 1")
@@ -78,5 +83,9 @@ def main_ui():  # main
             "method": "register"
         }
     elif result == 3:
-        print("have a good day!")
+        print("Have a good day!")
         exit()
+
+
+# -----------------------------------------------------------------------------
+
