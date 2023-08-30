@@ -1,4 +1,4 @@
-import helpers
+from server_functions import helpers
 
 
 def register(user_string):

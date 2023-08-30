@@ -1,4 +1,4 @@
-from consts import *
+from search_new_ui import consts
 
 
 def input_insert_and_test():
@@ -21,7 +21,7 @@ def if_guest_1():
         num_of_guests = input("how many guests will come? ")
     num_of_guests = int(num_of_guests)
     day_of_meal = input("which day?")
-    while day_of_meal not in DAY_LIST:
+    while day_of_meal not in consts.DAY_LIST:
         print("please enter the name of an existing day in lowercase letters. ")
         day_of_meal = input("try again: ")
     type_of_meal = input("what kind of meal do you want?\nb) breakfast\nl) lunch\nd) dinner\n")
@@ -53,7 +53,7 @@ def if_host_2():
         num_of_hosts = input("how many people will be? ")
     num_of_hosts = int(num_of_hosts)
     day_of_meal = input("What day would you like to host? (day name)")
-    while day_of_meal not in DAY_LIST:
+    while day_of_meal not in consts.DAY_LIST:
         print("please enter the name of an existing day in lowercase letters. ")
         day_of_meal = input("try again: ")
     type_of_meal = input("what kind of meal do you want to offer?\nb) breakfast\nl) lunch\nd) dinner\n")
@@ -71,13 +71,24 @@ def if_host_2():
         vibe_of_meal = input("please try again: ")
 
     res = f"{num_of_hosts}|{day_of_meal}|{type_of_meal}|{kosher}|{vibe_of_meal}"
-    host_dict["method"] = "new meal"
+    host_dict["method"] = "new_meal"
     host_dict["info"] = res
     return host_dict
 
 
-user_answer = input_insert_and_test()
-if user_answer == 0:
-    print(if_guest_1())
-else:
-    print(if_host_2())
+def main_ui(user):
+    print(f"Hi, {user['username']}\n")
+
+    if not len(user["notification"]):
+        print("You have no notifications\n")
+    else:
+        for notification in user["notification"]:
+            print('----------------------------')
+            print(notification)
+            print('----------------------------')
+
+    user_answer = input_insert_and_test()
+    if user_answer == 1:
+        return if_guest_1()
+    else:
+        return if_host_2()

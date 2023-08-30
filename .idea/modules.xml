@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/server-functions.iml" filepath="$PROJECT_DIR$/.idea/server-functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/HackatonProjectX.iml" filepath="$PROJECT_DIR$/.idea/HackatonProjectX.iml" />
     </modules>
   </component>
 </project>

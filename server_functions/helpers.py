@@ -1,7 +1,7 @@
 import json
 import hashlib
 
-import consts
+from server_functions import consts
 
 
 def get_all_users(path=consts.USERS_DB_PATH):
