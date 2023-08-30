@@ -10,6 +10,17 @@ def main():
     with open("current_user.json", 'r') as current_user_file:
         current_user = json.loads(current_user_file.read())
 
+    if current_user:
+        print("Do you want to logout?(yes/no)")
+        answer = input().lower()
+        while answer != "yes" and answer != "no":
+            answer = input("Enter only yes or no: ").lower()
+
+        if answer == "yes":
+            with open("current_user.json", 'w') as current_user_file:
+                current_user_file.write(json.dumps({}))
+                current_user = {}
+
     if len(current_user) == 0:
         choose_method = LielsPhase1.main_ui()
 
@@ -24,7 +35,7 @@ def main():
             with open("current_user.json", 'w') as current_user_file:
                 current_user_file.write(json.dumps(current_user))
 
-    else:
+    if type(current_user) == dict:
         is_running = True
 
         while is_running:
